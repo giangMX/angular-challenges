@@ -1,9 +1,10 @@
 
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { DetailsComponent } from './components/details/details.component';
 import { ListComponent } from './components/list/list.component';
+import { NgModule } from '@angular/core';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: ListComponent
@@ -13,4 +14,8 @@ const routes: Routes = [
     component: DetailsComponent
   }
 ];
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
 export class PokemonsRoute {}
